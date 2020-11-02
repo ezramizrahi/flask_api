@@ -30,8 +30,13 @@ data = [
      'github_url': 'https://github.com/ezramizrahi'}
 ]
 
-# returns all info about Ezra Mizrahi
 @app.route('/', methods=['GET'])
+def home():
+    return '''<h1>Ezra Mizrahi</h1>
+<p>An API with information about me, such as: name, software engineering skills, websites.</p>'''
+
+# returns all info about Ezra Mizrahi
+@app.route('/ezra', methods=['GET'])
 def api_all():
     return jsonify(data)
 
